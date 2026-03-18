@@ -1,48 +1,54 @@
-# Distributed-File-Retrieval-System-with-Replica-Consistency-Validation
-A Python distributed file retrieval system with two replicated servers. The coordinator server verifies replica consistency using SHA-256 hashing before sending files to the client via TCP socket communication.
+# Distributed File Retrieval System with Replica Consistency Validation
 
-Installation
+## Overview
+This project implements a **distributed file retrieval system** using a client–server architecture with **replicated file servers**. The system ensures that the client receives consistent data by validating file replicas using **SHA-256 hashing** before returning the file.
 
-Clone the repository:
-git clone https://github.com/yourusername/distributed-file-system.git
-cd distributed-file-system
+The architecture includes:
 
-Make sure Python 3 is installed.
+- **Client** – initiates file requests  
+- **Server1 (Coordinator)** – handles client requests and verifies replica consistency  
+- **Server2 (Replica)** – maintains replicated file storage
 
-Running the System
+Communication between nodes is implemented using **TCP sockets and JSON-based message passing**.
 
-Open three terminals.
+---
 
-Start Server2 (Replica)
-python3 server2.py
+## System Architecture
 
-Start Server1 (Coordinator)
-python3 server1.py
+![Architecture Diagram](distributed_system_architecture.png)
 
-Run Client
-python3 client.py filename.txt
+### Communication Flow
 
-Example Output
+1. Client sends a file request to Server1.
+2. Server1 checks its local storage.
+3. Server1 requests metadata from Server2.
+4. Server2 returns file metadata including SHA-256 hash.
+5. Server1 compares hashes to verify replica consistency.
+6. Server1 sends the appropriate response to the client.
 
-Client terminal:
-[CLIENT] File received from SERVER1
-[CLIENT] File saved as client/filename.txt
+---
 
-Replica mismatch case:
-[CLIENT] Replica mismatch detected
+## Key Features
 
-Error case:
-[CLIENT ERROR]: File not found on both servers
+- Distributed client-server architecture
+- Replica-based file storage
+- SHA-256 hash-based consistency validation
+- TCP socket communication
+- JSON-based structured messaging
+- Failure detection using timeouts
 
-Concepts Demonstrated
--Client–Server architecture
--Coordinator-based distributed systems
--Replica validation
--Message passing communication
--Failure detection through timeouts
+---
 
-Author - Kumar Shubham Anand
+## Technologies Used
 
-License - This project is for educational purposes.
+| Technology | Purpose |
+|-----------|--------|
+| Python | Implementation language |
+| TCP Sockets | Network communication |
+| JSON | Structured message exchange |
+| SHA-256 (hashlib) | Replica consistency validation |
+| Base64 | Binary file transmission |
 
+---
 
+## Project Structure
