@@ -11,44 +11,16 @@ The architecture includes:
 
 Communication between nodes is implemented using **TCP sockets and JSON-based message passing**.
 
----
-
-## System Architecture
-
-![Architecture Diagram](distributed_system_architecture.png)
-
-### Communication Flow
-
-1. Client sends a file request to Server1.
-2. Server1 checks its local storage.
-3. Server1 requests metadata from Server2.
-4. Server2 returns file metadata including SHA-256 hash.
-5. Server1 compares hashes to verify replica consistency.
-6. Server1 sends the appropriate response to the client.
 
 ---
 
-## Key Features
+## Installation
 
-- Distributed client-server architecture
-- Replica-based file storage
-- SHA-256 hash-based consistency validation
-- TCP socket communication
-- JSON-based structured messaging
-- Failure detection using timeouts
+Clone the repository:
 
----
+```bash
+git clone https://github.com/yourusername/distributed-file-system.git
+cd distributed-file-system
+```
 
-## Technologies Used
-
-| Technology | Purpose |
-|-----------|--------|
-| Python | Implementation language |
-| TCP Sockets | Network communication |
-| JSON | Structured message exchange |
-| SHA-256 (hashlib) | Replica consistency validation |
-| Base64 | Binary file transmission |
-
----
-
-## Project Structure
+zsdv
