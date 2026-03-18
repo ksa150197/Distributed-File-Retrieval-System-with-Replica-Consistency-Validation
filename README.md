@@ -17,7 +17,7 @@ Communication between nodes is implemented using **TCP sockets and JSON-based me
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/distributed-file-system.git
+git clone https://github.com/ksa150197/Distributed-File-Retrieval-System-with-Replica-Consistency-Validation.git
 cd distributed-file-system
 ```
 Make sure Python 3 is installed.
