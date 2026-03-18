@@ -60,3 +60,6 @@ Error case:
 [CLIENT ERROR]: File not found on both servers
 ```
 
+Author - Kumar Shubham Anand
+
+Liscence - This project should only be utilised for Educational Purposes
