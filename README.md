@@ -45,7 +45,7 @@ python3 client.py filename.txt
 ## Example Output
 
 Client terminal:
-``bash
+```bash
 [CLIENT] File received from SERVER1
 [CLIENT] File saved as client/filename.txt
 ```
