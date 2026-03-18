@@ -12,9 +12,7 @@ The architecture includes:
 Communication between nodes is implemented using **TCP sockets and JSON-based message passing**.
 
 
----
-
-## Installation
+## Installation Steps
 
 Clone the repository:
 
@@ -22,5 +20,43 @@ Clone the repository:
 git clone https://github.com/yourusername/distributed-file-system.git
 cd distributed-file-system
 ```
+Make sure Python 3 is installed.
 
-zsdv
+## Running the System
+
+Open three terminals.
+
+Start Server2 (Replica)
+
+```bash
+python3 server2.py
+```
+
+Start Server1 (Coordinator)
+```bash
+python3 server1.py
+```
+
+Run Client
+```bash
+python3 client.py filename.txt
+```
+
+## Example Output
+
+Client terminal:
+``bash
+[CLIENT] File received from SERVER1
+[CLIENT] File saved as client/filename.txt
+```
+
+Replica mismatch case:
+```bash
+[CLIENT] Replica mismatch detected
+```
+
+Error case:
+```bash
+[CLIENT ERROR]: File not found on both servers
+```
+
